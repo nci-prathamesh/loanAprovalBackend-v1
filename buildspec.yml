@@ -1,11 +1,13 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      java: corretto11
   build:
     commands:
         # run build script
-        - mvn clean
-        - mvn package
+        - mvn clean install -DskipTests=true
         
 artifacts:
   # include all files required to run application
